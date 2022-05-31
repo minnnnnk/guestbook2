@@ -63,12 +63,13 @@ public class GuestController extends HttpServlet {
 			
 		}else if("deleteForm".equals(action)) {
 			
-			int no = Integer.parseInt(request.getParameter("no"));
-			
-			BookDao bookDao = new BookDao();
-			GuestVo guestVo = bookDao.getGuest(no);
-			
-			request.setAttribute("guestVo", guestVo);
+			/*
+			 * int no = Integer.parseInt(request.getParameter("no"));
+			 * 
+			 * BookDao bookDao = new BookDao(); GuestVo guestVo = bookDao.getGuest(no);
+			 * 
+			 * request.setAttribute("guestVo", guestVo);
+			 */
 			
 			WebUtil.forward(request, response, "/WEB-INF/deleteForm.jsp");
 			
