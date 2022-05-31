@@ -17,6 +17,6 @@
 		비밀번호 <input type="password" name="password" value=""><button type ="submit">확인</button>
 		<input type ="hidden" name="no" value="<%=guestVo.getNo()%>">
 	</form>
-	<a href="./addList.jsp">메인으로 돌아가기</a>
+	<a href="/WEB-INF/addList.jsp">메인으로 돌아가기</a>
 </body>
 </html>

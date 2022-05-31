@@ -173,9 +173,11 @@ public class BookDao {
 			query += "         ,content ";
 			query += "         ,to_char(sysdate, 'YYYY-MM-DD HH:MI:SS') reg_date ";
 			query += " from guestbook ";
+			query += " where no = ? ";
 			
 			//바인딩
 			pstmt = conn.prepareStatement(query);
+			pstmt.setInt(1, no);
 			//실행
 			rs = pstmt.executeQuery();
 			// 4.결과처리

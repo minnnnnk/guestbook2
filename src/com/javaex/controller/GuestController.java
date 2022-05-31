@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.javaex.dao.BookDao;
+import com.javaex.util.WebUtil;
 import com.javaex.vo.GuestVo;
 
 
@@ -41,8 +42,13 @@ public class GuestController extends HttpServlet {
 			
 			request.setAttribute("gList", guestList);
 			
-			RequestDispatcher rd = request.getRequestDispatcher("/addList.jsp");
-			rd.forward(request, response);
+			
+			WebUtil.forward(request, response, "/WEB-INF/addList.jsp");
+			
+			/*
+			 * RequestDispatcher rd = request.getRequestDispatcher("/addList.jsp");
+			 * rd.forward(request, response);
+			 */
 		} else if ("add".equals(action)) {
 			String name = request.getParameter("name");
 			String password = request.getParameter("password");
@@ -64,8 +70,7 @@ public class GuestController extends HttpServlet {
 			
 			request.setAttribute("guestVo", guestVo);
 			
-			RequestDispatcher rd = request.getRequestDispatcher("/deleteForm.jsp");
-			rd.forward(request, response);
+			WebUtil.forward(request, response, "/WEB-INF/deleteForm.jsp");
 			
 		}else if ("delete".equals(action)) {
 			int no = Integer.parseInt(request.getParameter("no"));

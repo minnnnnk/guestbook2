@@ -39,7 +39,7 @@
 	
 	
 	
-	<%for (int i =1; i<guestList.size(); i++) {%>
+	<%for (int i =0; i<guestList.size(); i++) {%>
 		<table border ="1">
 			<tr>
 				<td><%=guestList.get(i).getNo()%></td>
