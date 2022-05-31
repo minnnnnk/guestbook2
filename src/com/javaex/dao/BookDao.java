@@ -66,13 +66,12 @@ public class BookDao {
 			//SQL문 준비
 			String query = "";
 			query += " insert into guestbook ";
-			query += " values(SEQ_GUESTBOOK_NO.nextval,?,?,?,?) ";
+			query += " values(SEQ_GUESTBOOK_NO.nextval,?,?,?,sysdate) ";
 			//바인딩
 			pstmt = conn.prepareStatement(query);
 			pstmt.setString(1, guestVo.getName());
 			pstmt.setString(2, guestVo.getPassword());
 			pstmt.setString(3, guestVo.getContent());
-			pstmt.setString(4, guestVo.getRegDate());
 			
 			//실행
 			count = pstmt.executeUpdate();
@@ -130,7 +129,7 @@ public class BookDao {
 			query += "         ,name ";
 			query += "         ,password ";
 			query += "         ,content ";
-			query += "         ,to_char(reg_date, 'YYYY-MM-DD HH:MI:SS') reg_date ";
+			query += "         ,to_char(sysdate, 'YYYY-MM-DD HH:MI:SS') reg_date ";
 			query += " from guestbook ";
 			
 			//바인딩
@@ -172,7 +171,7 @@ public class BookDao {
 			query += "         ,name ";
 			query += "         ,password ";
 			query += "         ,content ";
-			query += "         ,to_char(reg_date, 'YYYY-MM-DD HH:MI:SS') reg_date ";
+			query += "         ,to_char(sysdate, 'YYYY-MM-DD HH:MI:SS') reg_date ";
 			query += " from guestbook ";
 			
 			//바인딩
